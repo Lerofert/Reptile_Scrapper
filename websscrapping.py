@@ -15,7 +15,7 @@ PAGES = {
     "Snakes": "https://www.backwaterreptiles.com/snakes/snakes-for-sale.html",
     "Turtles": "https://www.backwaterreptiles.com/turtles-for-sale.html",
     "Tortoises": "https://www.backwaterreptiles.com/tortoises-for-sale.html",
-    # etc: adicione quantas abas desejar
+
 }
 
 def scrape_category(category_name, url):
@@ -24,8 +24,7 @@ def scrape_category(category_name, url):
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    # Aqui você precisa inspecionar a página para decidir a “query selector” correta.
-    # No caso das páginas que já fizemos (toads, frogs, newts), usamos:
+  
     blocks = soup.select("div.stacks_div.stacks_middle")
 
     items = []
@@ -70,6 +69,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
